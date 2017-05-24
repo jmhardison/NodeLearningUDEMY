@@ -1,0 +1,43 @@
+{
+  "name": "restaurantapi",
+  "version": "0.0.1",
+  "description": "Restaurant API for Devslope RESTful API Course",
+  "main": "dist",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run build && node ./dist",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
+    "start": "pm2 start dist",
+    "prestart": "npm run -s build",
+    "lint": "eslint src"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
+  },
+  "author": "Jonathan Hardison <jmh@jonathanhardison.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.19.0",
+    "nodemon": "^1.11.0"
+  }
+}
