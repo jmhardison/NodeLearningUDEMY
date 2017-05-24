@@ -1,6 +1,6 @@
 # configs
-src/config/index.js
-src/config
+/src/config/index.js
+
 
 # Logs
 logs
