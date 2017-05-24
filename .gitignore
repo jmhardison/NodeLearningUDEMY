@@ -1,3 +1,6 @@
+# configs
+src/config/index.js
+
 # Logs
 logs
 *.log
