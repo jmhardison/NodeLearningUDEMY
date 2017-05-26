@@ -66,6 +66,16 @@ export default({ config, db}) => {
         });
     });
     
+    // for /v1/foodtruck/foodtype/:foodtype to get trucks by type of food
+    api.get('/foodtype/:foodtype', (req, res) => {
+        Foodtruck.find({foodtype: req.params.foodtype}, (err, foodtruck) =>{
+            if(err){
+                res.send(err);
+            }
+            res.json(foodtruck);
+        });
+    });
+
     // for /v1/foodtruck/:id | delete
     api.delete('/:id', (req,res) => {
         Foodtruck.findById(req.params.id, (err, foodtruck) => {
@@ -88,6 +98,8 @@ export default({ config, db}) => {
             res.json({message: `${req.params.id} successfully deleted.`});
         });
     });
+
+    
 
 
     // for review addition

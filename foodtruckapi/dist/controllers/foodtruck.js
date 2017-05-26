@@ -83,6 +83,16 @@ exports.default = function (_ref) {
         });
     });
 
+    // for /v1/foodtruck/foodtype/:foodtype to get trucks by type of food
+    api.get('/foodtype/:foodtype', function (req, res) {
+        _foodtruck2.default.find({ foodtype: req.params.foodtype }, function (err, foodtruck) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(foodtruck);
+        });
+    });
+
     // for /v1/foodtruck/:id | delete
     api.delete('/:id', function (req, res) {
         _foodtruck2.default.findById(req.params.id, function (err, foodtruck) {

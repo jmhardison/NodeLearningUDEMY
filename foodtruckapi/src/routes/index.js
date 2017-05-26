@@ -4,6 +4,7 @@ import config from '../config';
 import middleware from '../middleware';
 import initializeDB from '../db.js';
 import foodtruck from '../controllers/foodtruck.js';
+import account from '../controller/account';
 
 let router = express();
 
@@ -14,6 +15,7 @@ initializeDB(db => {
 
     //specify routes
     router.use('/foodtruck', foodtruck({config, db}));
+    router.use('/account', account({config, db}));
 
 });
 
